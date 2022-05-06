@@ -17,7 +17,9 @@
         "purchase",
     ],
     "data": [
-
+        "views/views.xml",
+        "views/donation_report.xml",
+        "views/views.xml",
     ],
     "installable": True,
 }
