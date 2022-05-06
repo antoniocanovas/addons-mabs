@@ -18,7 +18,7 @@
     ],
     "data": [
         "views/views.xml",
-        "views/templates.xml",
+        "views/donation_report.xml",
         "views/views.xml",
     ],
     "installable": True,
