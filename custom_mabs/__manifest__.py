@@ -17,7 +17,7 @@
         "purchase",
     ],
     "data": [
-        "views/views.xml",
+        "views/purchase_order_legal_report.xml",
         "views/donation_report.xml",
         "views/views.xml",
     ],
