@@ -141,7 +141,6 @@
                             D <span t-field="o.partner_id.name"/> comparece en su propio nombre y derecho / appears in her own name and right.
                                 <br/></p>
                             <p align="center"><strong>TESTIGO (Representante de MABS) / WITNESS (Representative of MABS)</strong></p>
-                            <br/>
                             <p align="justify" style="font-size:10pt;">D <span t-field="o.legal_partner_id.name"/>.     (nombre y apellidos / name and surname) DNI / NIE: <span t-field="o.legal_partner_id.vat"/>
                             <br/>
                             Ambas partes se reconocen la capacidad legal necesaria para formalizar este contrato de DONACIÓN DE BIEN MUEBLE, y a tal efecto.  Both parties adopt the necessary legal capacity to formalize this DONATION OF
