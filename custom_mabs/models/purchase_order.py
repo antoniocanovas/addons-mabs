@@ -10,4 +10,4 @@ from odoo import api, fields, models, _
 class ProductTemplate(models.Model):
     _inherit = "purchase.order"
 
-    legal_partner_id = fields.Many2one('res.partner', string='Representante Legal')
+    legal_partner_id = fields.Many2one('res.partner', string='Witness')

@@ -22,7 +22,7 @@
                 <div class="page">
                     <div class="oe_structure"/>
 
-                    <h2 t-if="o.state in ['purchase', 'done']">DONACIÓN DE BIEN MUEBLE / DONATION OF MOVABLE PROPERTY #<span t-field="o.name"/></h2>
+                    <p align="justify" style="font-size:14pt;">DONACIÓN DE BIEN MUEBLE / DONATION OF MOVABLE PROPERTY #<span t-field="o.name"/></p>
 
                     <div id="informations" class="row mt32 mb32">
                         <div t-if="o.user_id" class="col-3 bm-2">
@@ -128,38 +128,35 @@
                     </div>
 
                     <p t-field="o.notes"/>
-                                                <strong>COMPARECEN / COMPARRISON</strong><br/>
-                            Dª JACQUELYNE ADRIANNE PHILLIPS, mayor de edad, vecina de Javea, con domicilio en calle
+                                                <p align="center"><strong>COMPARECEN / COMPARRISON</strong></p>
+                            <p align="justify" style="font-size:10pt;">Dª JACQUELYNE ADRIANNE PHILLIPS, mayor de edad, vecina de Javea, con domicilio en calle
                             Caravaggio, número 1 y NIE número X0913390Z<br/>
                             Ms. JACQUELYNE ADRIANNE PHILLIPS, of legal age, resident of Javea, with address at Calle Caravaggio,
-                            number 1 and NIE number X0913390Z<br/>
-                            <strong>DONATE / DONOR</strong><br/>
-                            D. <span t-field="o.partner_id.name"/> (nombre y apellidos) D.N.I número <span t-field="o.partner_id.vat"/><br/>
-                            D. <span t-field="o.partner_id.name"/> (name and surname) NIE number <span t-field="o.partner_id.vat"/><br/>
-                                            <br/>
-                                                    <strong>INTERVIENEN /   DECLARACTION</strong><br/>
-                            Dª JACQUELYNE ADRIANNE PHILLIPS en nombre y representación como PRESIDENTA DEL PATRONATO de la entidad MABS CANCER SUPPORT FUNDACÍON, domiciliada en calle Caravaggio, nº 1 de Javea, constituida por tiempo indefinido mediante escritura otorgada en Benidorm, ante la Notario Doña Laura Riesgo Fernández, el 11 de enero de 2017, al número 31 de su protocolo. Inscrita en el Registro de Fundaciones estatal, por Orden Ministerial de 04/08/2017, con el número 1923. Provista de NIF G54982681
+                                number 1 and NIE number X0913390Z<br/></p>
+                            <p align="center"><strong>DONATE / DONOR</strong><br/></p>
+                            <p align="justify" style="font-size:10pt;">D. <span t-field="o.partner_id.name"/> (nombre y apellidos / name and surname) DNI / NIE: <span t-field="o.partner_id.vat"/><br/></p>
+                            <p align="center"><strong>INTERVIENEN /   DECLARACTION</strong><br/></p>
+                            <p align="justify" style="font-size:10pt;">Dª JACQUELYNE ADRIANNE PHILLIPS en nombre y representación como PRESIDENTA DEL PATRONATO de la entidad MABS CANCER SUPPORT FUNDACÍON, domiciliada en calle Caravaggio, nº 1 de Javea, constituida por tiempo indefinido mediante escritura otorgada en Benidorm, ante la Notario Doña Laura Riesgo Fernández, el 11 de enero de 2017, al número 31 de su protocolo. Inscrita en el Registro de Fundaciones estatal, por Orden Ministerial de 04/08/2017, con el número 1923. Provista de NIF G54982681
                             <br/>
                             D <span t-field="o.partner_id.name"/> comparece en su propio nombre y derecho / appears in her own name and right.
-                            <br/>
-                            <strong>TESTIGO (Representante de MABS) / WITNESS (Representative of MABS)</strong>
-                            <br/>
-                            D <span t-field="o.legal_partner_id.name"/>.     (name and surname) NIE number <span t-field="o.legal_partner_id.vat"/>
+                                <br/></p>
+                            <p align="center"><strong>TESTIGO (Representante de MABS) / WITNESS (Representative of MABS)</strong></p>
+                            <p align="justify" style="font-size:10pt;">D <span t-field="o.legal_partner_id.name"/>.     (nombre y apellidos / name and surname) DNI / NIE: <span t-field="o.legal_partner_id.vat"/>
                             <br/>
                             Ambas partes se reconocen la capacidad legal necesaria para formalizar este contrato de DONACIÓN DE BIEN MUEBLE, y a tal efecto.  Both parties adopt the necessary legal capacity to formalize this DONATION OF
                             MOVABLE PROPERTY contract, and to this end
-                                    <br/>
-                            <strong>EXPONEN /   OWNERSHIP</strong><br/>
-                            Que EL DONANTE es propietario en régimen de plena propiedad y dominio de *** (descripción del bien), por título de compraventa. Que el bien se encuentra libre de toda carga o gravamen y no existe sobre el mismo contienda judicial o de cualquier otra índole. That THE DONOR is the legal owner of the item(s) listed, by title of sale.  That the item(s) is free of any charge or encumbrance and there is no legal or other type of dispute over it.
+                                <br/></p>
+                            <p align="center"><strong>EXPONEN /   OWNERSHIP</strong><br/></p>
+                            <p align="justify" style="font-size:10pt;">Que EL DONANTE es propietario en régimen de plena propiedad y dominio de los bienes listados, por título de compraventa. Que el bien se encuentra libre de toda carga o gravamen y no existe sobre el mismo contienda judicial o de cualquier otra índole. That THE DONOR is the legal owner of the item(s) listed, by title of sale.  That the item(s) is free of any charge or encumbrance and there is no legal or other type of dispute over it.
                                     <br/>
                             Que el donante tiene la intención, voluntaria y consciente, de donarlo a MABS CANCER SUPPORT FUNDATION, por lo que dona pura y gratuitamente el bien inmueble referenciado quien a su vez acepta tal acto de
                             liberalidad. That the donor has the intention, voluntarily and consciously, to donate it to the MABS CANCER SUPPORT FOUNDACÍON, for which he donates the referenced item(s) purely and free of charge, who in turn accepts such act of generosity.
-                            <br/>
-                            <strong>SUBROGACIÓN DEL DONATARIO / TRANSFER OF GOODS</strong><br/>
-                            El donatario se subroga en todos los derechos y acciones que en caso de evicción corresponderían al donante, haciéndose cargo, a partir del presente momento, de todos los gastos, pagos o impuestos que afecten al mencionado bien, así como a sanearlo y conservarlo con las diligencia propia de su nueva condición, no pudiendo reclamar en ninguno de estos conceptos al donante.  The donor is exempt from all and any costs for the repair or cleaning of the item(s)
-                            <br/>
-                            <strong>DONACIÓN SUJETA A CONDICIÓN / DONATION SUBJECT TO CONDITION</strong><br/>
-                            La presente donación queda sometida a la condición de que el bien mueble referenciado o lo obtenido por su venta se dedique al cumplimiento de los fines sociales de La Fundación. The Foundation will use any monies received as a result of this donation to fund the costs of the services it provides
+                                <br/></p>
+                            <p align="center"><strong>SUBROGACIÓN DEL DONATARIO / TRANSFER OF GOODS</strong><br/></p>
+                            <p align="justify" style="font-size:10pt;">El donatario se subroga en todos los derechos y acciones que en caso de evicción corresponderían al donante, haciéndose cargo, a partir del presente momento, de todos los gastos, pagos o impuestos que afecten al mencionado bien, así como a sanearlo y conservarlo con las diligencia propia de su nueva condición, no pudiendo reclamar en ninguno de estos conceptos al donante.  The donor is exempt from all and any costs for the repair or cleaning of the item(s)
+                                <br/></p>
+                            <p align="center"><strong>DONACIÓN SUJETA A CONDICIÓN / DONATION SUBJECT TO CONDITION</strong><br/></p>
+                            <p align="justify" style="font-size:10pt;">La presente donación queda sometida a la condición de que el bien mueble referenciado o lo obtenido por su venta se dedique al cumplimiento de los fines sociales de La Fundación. The Foundation will use any monies received as a result of this donation to fund the costs of the services it provides
                             <br/>
                             En caso de que no se cumpliera la condición impuesta por causa imputable al donatario, la donación podrá ser revocada unilateralmente a instancia del donante, en cuyo caso, el bien volverá al patrimonio del donante, quedando nulas las enajenaciones que el donatario hubiese hecho y las hipotecas que hubiese impuesto sobre el mismo. In the event that the item(s) are not sold the donation may be revoked and the item(s) returned to the donor
                             <br/>
@@ -185,7 +182,7 @@
                             + Information: You can consult additional information in the followinglink www.procoden.es/G54982681<br/>
                             This message and attachments are confidential and are addressed exclusively to the recipient. If you are not the indicated recipient, you are warned that the use, disclosure, and/or copying without authorisation is forbidden under current legislation. If you have received this email in error, please notify us immediately by email or phone, as above and be kind enough to remove it from your system. Full details of our data protection policy is available by clicking the following link www.procoden.es/G54982681
                             <br/>
-                            Este mensaje y los archivos adjuntos son confidenciales y se dirigen exclusivamente a su destinatario. Si Ud. no es el destinatario indicado, queda advertido de que la utilización, divulgación y/o copia sin autorización está prohibida en virtud de la legislación vigente. Si usted ha recibido este correo por error, por favor avísenos inmediatamente a través de correo electrónico o por teléfono, descritos en la parte superior, y tenga la amabilidad de eliminarlo de su sistema. Puede consultar información adicional al respecto a través del siguiente enlace www.procoden.es/G54982681<br/>
+                                Este mensaje y los archivos adjuntos son confidenciales y se dirigen exclusivamente a su destinatario. Si Ud. no es el destinatario indicado, queda advertido de que la utilización, divulgación y/o copia sin autorización está prohibida en virtud de la legislación vigente. Si usted ha recibido este correo por error, por favor avísenos inmediatamente a través de correo electrónico o por teléfono, descritos en la parte superior, y tenga la amabilidad de eliminarlo de su sistema. Puede consultar información adicional al respecto a través del siguiente enlace www.procoden.es/G54982681<br/></p>
                             <div class="oe_structure"/>
                 </div>
             </t>
