@@ -79,9 +79,8 @@
                         </div>
                     </div>
                 </div>
+                <div class="clearfix"/>
                 <div class="page">
-                    <div class="oe_structure"/>
-
                     <p align="justify" style="font-size:14pt;">DONACIÓN DE BIEN MUEBLE / DONATION OF MOVABLE PROPERTY #<span t-field="o.name"/></p>
 
                     <div id="informations" class="row mt32 mb32">
