@@ -31,7 +31,7 @@
                         <span t-field="company.report_footer"/>
                     </div>-->
 
-                    <div class="text-muted">
+                    <div>
                         Page: <span class="page"/> / <span class="topage"/>
                     </div>
                 </div>
