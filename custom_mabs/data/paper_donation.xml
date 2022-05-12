@@ -13,7 +13,7 @@
             <field name="margin_right">7</field>
             <field name="header_spacing">25</field>
             <field name="dpi">90</field>
-            <field name="report_ids" eval="[(6, 0, [ref('custom_mabs.donation_report')])]"/>
+            <!-- esta mal hay que correir la ref <field name="report_ids" eval="[(6, 0, [ref('custom_mabs.donation_report')])]"/>-->
         </record>
     </data>
 

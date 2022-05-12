@@ -20,7 +20,6 @@
         "views/purchase_order_legal_report.xml",
         "views/donation_report.xml",
         "views/views.xml",
-        "data/paper_donation.xml",
     ],
     "installable": True,
 }
