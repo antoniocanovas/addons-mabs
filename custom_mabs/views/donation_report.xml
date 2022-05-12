@@ -2,26 +2,86 @@
 
 <odoo>
     <data>
+        <template id="mabs_external_layout_standard">
+            <div class="header" t-att-style="report_header_style">
+                <div class="row">
+                    <div class="col-3 mb4">
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 85px;" alt="Logo"/>
+                    </div>
+                    <div class="col-9 text-right" style="margin-top:25px;" t-field="company.report_header" name="moto"/>
+                </div>
+            </div>
+
+            <div class="article o_report_layout_standard"  t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-call="web.address_layout"/>
+                <t t-raw="0"/>
+            </div>
+
+            <div class="footer o_standard_footer">
+                <div class="text-center" style="border-top: 1px solid black;">
+                    <!--no imprimimos en el footer nada de información de la compañía
+                    <ul class="list-inline mb4">
+                        <li t-if="company.phone" class="list-inline-item">Phone: <span t-field="company.phone"/></li>
+                        <li t-if="company.email" class="list-inline-item">Email: <span t-field="company.email"/></li>
+                        <li t-if="company.website" class="list-inline-item">Web: <span t-field="company.website"/></li>
+                        <li t-if="company.vat" class="list-inline-item"><t t-esc="(company.country_id.vat_label or 'Tax ID').replace(' ','\N{NO-BREAK SPACE}')"/>: <span t-esc="company.vat.replace(' ','\N{NO-BREAK SPACE}')"/></li>
+                    </ul>-->
+
+                    <div name="financial_infos" style="border-top: 1px solid black;font-size: 10px !important;">
+                        <span t-field="company.report_footer"/>
+                    </div>
+
+                    <div>
+                        Page: <span class="page"/> / <span class="topage"/>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="mabs_external_layout">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+            <t t-call="custom_mabs.mabs_external_layout_standard"><t t-raw="0"/></t>
+
+        </template>
 
         <template id="donation_report_document_report">
-            <t t-call="web.external_layout">
+            <t t-call="custom_mabs.mabs_external_layout">
                 <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)"/>
-                <t t-set="address">
-                    <div t-field="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
-                    <p t-if="o.partner_id.vat"><t t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>: <span t-field="o.partner_id.vat"/></p>
-                </t>
-                <t t-if="o.dest_address_id">
-                    <t t-set="information_block">
-                        <strong>Shipping address:</strong>
-                        <div t-if="o.dest_address_id">
-                            <div t-field="o.dest_address_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}" name="purchase_shipping_address"/>
+                <div>
+                    <div style="float:left;text-align:left">
+                        <strong><span t-field="o.company_id" style="text-align:right;font-weight: 900;white-space: nowrap;font-size:16px;"/></strong><br/>
+                        <span t-field="o.company_id.street"/><br/>
+                        <span t-field="o.company_id.zip"/> <span t-field="o.company_id.city"/><br/>
+                        <span t-field="o.company_id.state_id"/> <span t-field="o.company_id.country_id"/><br/>
+                        NIE: <span t-field="o.company_id.vat"/><br/>
+                    </div>
+                    <div style="float:right;text-align:right">
+                        <div style="font-weight: 400;font-family: montserrat;font-size:14px;text-align:right;line-height: 18px;margin-right:120px">
+                            <strong><p style="text-align:right;font-weight: 900;white-space: nowrap;font-size:16px;">DONANTE / DONOR</p></strong>
+                            <strong><span t-field="o.partner_id" style="text-align:right;font-weight: 900;white-space: nowrap;font-size:16px;"/></strong><br/>
+                            <span t-field="o.partner_id.street"/><br/>
+                            <span t-field="o.partner_id.zip"/> <span t-field="o.partner_id.city"/><br/>
+                            <span t-field="o.partner_id.state_id"/> <span t-field="o.partner_id.country_id"/><br/>
+                            NIF /NIE: <span t-field="o.partner_id.vat"/><br/>
+                            <br/>
                         </div>
-
-                    </t>
-                </t>
+                    </div>
+                </div>
+                <div class="clearfix"/>
                 <div class="page">
-                    <div class="oe_structure"/>
-
                     <p align="justify" style="font-size:14pt;">DONACIÓN DE BIEN MUEBLE / DONATION OF MOVABLE PROPERTY #<span t-field="o.name"/></p>
 
                     <div id="informations" class="row mt32 mb32">
@@ -129,12 +189,9 @@
 
                     <p t-field="o.notes"/>
                                                 <p align="center"><strong>COMPARECEN / COMPARRISON</strong></p>
-                            <p align="justify" style="font-size:10pt;">Dª JACQUELYNE ADRIANNE PHILLIPS, mayor de edad, vecina de Javea, con domicilio en calle
-                            Caravaggio, número 1 y NIE número X0913390Z<br/>
-                            Ms. JACQUELYNE ADRIANNE PHILLIPS, of legal age, resident of Javea, with address at Calle Caravaggio,
-                                number 1 and NIE number X0913390Z<br/></p>
-                            <p align="center"><strong>DONATE / DONOR</strong><br/></p>
-                            <p align="justify" style="font-size:10pt;">D. <span t-field="o.partner_id.name"/> (nombre y apellidos / name and surname) DNI / NIE: <span t-field="o.partner_id.vat"/><br/></p>
+                            <p align="justify" style="font-size:10pt;">Dª JACQUELYNE ADRIANNE PHILLIPS, mayor de edad, vecina de Javea, con domicilio en / of legal age, resident of Javea, with address at calle
+                            Caravaggio, 1 y / and NIE X0913390Z<br/>
+                            </p>
                             <p align="center"><strong>INTERVIENEN /   DECLARACTION</strong><br/></p>
                             <p align="justify" style="font-size:10pt;">Dª JACQUELYNE ADRIANNE PHILLIPS en nombre y representación como PRESIDENTA DEL PATRONATO de la entidad MABS CANCER SUPPORT FUNDACÍON, domiciliada en calle Caravaggio, nº 1 de Javea, constituida por tiempo indefinido mediante escritura otorgada en Benidorm, ante la Notario Doña Laura Riesgo Fernández, el 11 de enero de 2017, al número 31 de su protocolo. Inscrita en el Registro de Fundaciones estatal, por Orden Ministerial de 04/08/2017, con el número 1923. Provista de NIF G54982681
                             <br/>
