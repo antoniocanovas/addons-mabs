@@ -8,8 +8,8 @@
         <field name="inherit_id" ref="base.view_company_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='currency_id']" position="after">
-                <field name="donation_product_id"/>
-                <field name="donation_journal_id"/>
+                <field name="donation_product_id" domain="[('sale_ok','=',True)]"/>
+                <field name="donation_journal_id" domain="[('type','=','sale')]"/>
             </xpath>
         </field>
     </record>

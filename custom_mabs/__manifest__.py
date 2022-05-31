@@ -22,6 +22,7 @@
         "views/purchase_order.xml",
         "views/res_company.xml",
         "views/account_move.xml",
+        "data/server_actions.xml",
     ],
     "installable": True,
 }
