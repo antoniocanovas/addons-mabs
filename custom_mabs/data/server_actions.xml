@@ -7,7 +7,7 @@
             <field name="state">code</field>
             <field name="code">
 
-if not record.donation_invoice_id.id:
+if (not record.donation_invoice_id.id) and (record.move_type == 'in_invoice):
     donation_journal = env.company.donation_journal_id
     donation_product = env.company.donation_product_id
     if not donation_journal.id or not donation_product.id:
