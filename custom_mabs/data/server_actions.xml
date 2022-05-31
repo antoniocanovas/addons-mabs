@@ -8,9 +8,11 @@
             <field name="code">
 
             if not record.donation_invoice_id.id:
-              donation_journal = self.env.company.donation_journal
-              donation_product = self.env.company.donation_product
-              donation_invoice = self.env['account.move'].create({'move_type':'out_invoice',
+              donation_journal = env.company.donation_journal_id
+              donation_product = env.company.donation_product_id
+              if not donation_journal_id.id or not donation_product_id.id:
+                raise Warning('Cumpliemnta en la ficha de empresa diario y producto de donaciones.')
+              donation_invoice = env['account.move'].create({'move_type':'out_invoice',
                                                                   'journal_id':donation_journal.id,
                                                                   'partner_id':record.partner_id})
               record['donation_invoice_id'] = donation_invoice.id
