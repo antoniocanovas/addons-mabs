@@ -15,7 +15,7 @@
                     <button name="custom_mabs.create_donation_invoice" string="Donation invoice"
                             class="oe_highlight" type="action" groups="account.group_account_invoice"
                             attrs="{'invisible' : ['|','|',('move_type','!=','in_invoice'),
-                                    ('donation_invoice_id', '!=', False),('state','!=','posted']}"/>
+                                    ('donation_invoice_id', '!=', False),('state','!=','posted')]}"/>
                 </xpath>
             </data>
         </field>
