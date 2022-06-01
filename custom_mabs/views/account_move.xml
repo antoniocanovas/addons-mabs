@@ -9,7 +9,7 @@
         <field name="arch" type="xml">
             <data>
                 <xpath expr="//field[@name='ref']" position="after">
-                    <field name="donation_invoice_id" readonly="1" attrs="{'invisible':[('move_type','!=','in_invoice')]}"/>
+                    <field name="donation_invoice_id" readonly="1" attrs="{'invisible':[('donation_invoice_id','=',False)]}"/>
                 </xpath>
                 <xpath expr="//button[@name='button_cancel']" position="after">
                     <button name="custom_mabs.create_donation_invoice" string="Donation invoice"
