@@ -10,5 +10,5 @@ from odoo import api, fields, models, _
 class ResCompany(models.Model):
     _inherit = "res.company"
 
-    donation_product_id = fields.Many2one('product.product', string='Donation product', required=True)
-    donation_journal_id = fields.Many2one('account.journal', string='Donation journal', required=True)
+    donation_product_id = fields.Many2one('product.product', string='Donation product')
+    donation_journal_id = fields.Many2one('account.journal', string='Donation journal')
