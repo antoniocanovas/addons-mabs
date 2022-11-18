@@ -21,6 +21,7 @@
         "views/purchase_order_legal_report.xml",
         "views/donation_report.xml",
         "views/purchase_order.xml",
+        "views/sale_order.xml",
         "views/res_company.xml",
         "views/account_move.xml",
     ],

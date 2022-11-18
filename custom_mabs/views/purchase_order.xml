@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <odoo>
 
-      <record id="view_purchase_order_legal_partner" model="ir.ui.view">
+    <record id="view_purchase_order_legal_partner" model="ir.ui.view">
         <field name="name">Purchase Order Legal Partner</field>
         <field name="model">purchase.order</field>
         <field name="type">form</field>
@@ -9,6 +9,9 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_id']" position="after">
                 <field name="legal_partner_id"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='products']/field[@name='order_line']/tree[1]/field[@name='product_id']" position="attributes">
+                <attribute name="options">{"no_create":true}</attribute>
             </xpath>
         </field>
     </record>
